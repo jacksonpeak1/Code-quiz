@@ -1,3 +1,33 @@
-h1 {
-    color:red;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+ body{
+     font-family: sans-serif;
+ }
+
+ .center{
+     height: 100vh;
+     border: 1px solid red;
+     display: grid;
+     place-items: center;
+     padding: 0rem 5rem;
+ }
+
+ h1{
+     font-size: 3rem;
+ }
+
+ h2{
+     font-size: 2rem;
+ }
+
+.text-align-center{
+    text-align: center;
+}
+
+#start-btn{
+font-size: 1rem;
+padding: 1rem;
 }
