@@ -63,4 +63,8 @@ padding: 1rem;
     outline: none;
     border-color: #8ac4ff;
   }
-  
+
+  .question-choices {
+      font-size: larger;
+      color:#e63946;
+  }

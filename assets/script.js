@@ -63,6 +63,7 @@ var questions = [
   }
 ];
 
+
 //keep track of question index
 var questionIndex = 0;
 
@@ -76,12 +77,12 @@ function generateQuestion() {
   //create the question string
   var questionMarkUp = `
         <h4 class="question-title">${currentQuestion.title}</h4>
-        <div class="question-choices-container">
-            <div class="question-choices">${currentQuestion.choices[0]}</div>
-            <div class="question-choices">${currentQuestion.choices[1]}</div>
-            <div class="question-choices">${currentQuestion.choices[2]}</div>
-            <div class="question-choices">${currentQuestion.choices[3]}</div>
-        </div>
+        <button class="question-choices-container">
+            <button class="question-choices">${currentQuestion.choices[0]}</button>
+            <button class="question-choices">${currentQuestion.choices[1]}</button>
+            <button class="question-choices">${currentQuestion.choices[2]}</button>
+            <button class="question-choices">${currentQuestion.choices[3]}</button>
+        </button>
     `;
 
   //convert the question string into html and insert it into the page
