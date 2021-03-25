@@ -137,22 +137,21 @@ document.querySelector("#submit").addEventListener("click", function () {
   // //get the user input
 
   var newScore;
-  console.log(newScore);
 
   if (userInput.value.trim() !== "") {
     newScore = {
       user: userInput.value,
       score: score,
     };
-    console.log(newScore);
   }
 
   if (localStorage.getItem("highScores")) {
-    var scoresFromStorage = JSON.parse(localStorage.getItem("highScores"));
-    console.log(scoresFromStorage);
+    var scoresFromStorage = JSON.parse(localStorage.getItem("highScores"))
+    scoresFromStorage.push(newScore);
+    localStorage.setItem("highScores", JSON.stringify(scoresFromStorage))
   } else if (!localStorage.getItem("highScores") && newScore) {
     //if nothing in local storage, set first score
-    localStorage.setItem('highScores', JSON.stringify([newScore]));
+    localStorage.setItem("highScores", JSON.stringify([newScore]));
   }
 
   //build score object
