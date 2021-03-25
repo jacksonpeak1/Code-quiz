@@ -1,6 +1,7 @@
 var startBtn = document.getElementById("start-btn");
 var welcomeScreen = document.getElementById("welcome-screen");
 var questionScreen = document.getElementById("question-screen");
+var userInput = document.getElementById("initials");
 var timer;
 var time = 60;
 
@@ -35,34 +36,32 @@ function startGame() {
 var questions = [
   {
     title: "Which of the following is not a primitive data type?",
-    choices: ["Boolean", "String", "Number", "Console"],
-    answer: "Console",
+    choices: ["1. Boolean", "2. String", "3. Number", "4. Console"],
+    answer: "4. Console",
   },
   {
     title: "What symbol is associated with arrays?",
-    choices: ["[]", "{}", "+", ">"],
-    answer: "[]",
+    choices: ["1. []", "2. {}", "3. +", "4. >"],
+    answer: "1. []",
   },
   {
     title:
       "Which of the following is used to loop through a block of code a number of times?",
-    choices: ["for-loop", "object", "method", "function-loop"],
-    answer: "for-loop",
+    choices: ["1. function-loop", "2. object", "3. method", "4. for-loop"],
+    answer: "4. for-loop",
   },
   {
-    title:
-      "Out of the following which number value does a index begin on?",
-    choices: ["0", "1", "2", "3",],
-    answer: "0",
+    title: "Out of the following which number value does a index begin on?",
+    choices: ["1. 0", "2. 1", "3. 2", "4. 3"],
+    answer: "1. 0",
   },
   {
     title:
       "Which javascript method adds one or more elements to the end of an array and returns the new length of the array.",
-    choices: ["push", "try", "last", "generate",],
-    answer: "push",
-  }
+    choices: ["1. last", "2. try", "3. push", "4. generate"],
+    answer: "3. push",
+  },
 ];
-
 
 //keep track of question index
 var questionIndex = 0;
@@ -94,12 +93,12 @@ function generateQuestion() {
     arrayChoices[i].addEventListener("click", function (event) {
       // check if the answer is correct
       if (event.target.textContent === currentQuestion.answer) {
-        //reward
+        //score increase
         score++;
         document.querySelector("#score").textContent = score;
         console.log(score);
       } else {
-        //punishment
+        //time deduction
         time = time - 10;
       }
       console.log(event.target.textContent);
@@ -134,32 +133,41 @@ function end() {
   document.querySelector("#final-score").textContent = score;
 }
 
-document.querySelector("#submit").addEventListener("click", function() {
-  //get the user input
-  var userInput = document.querySelector("#initials").value;
+document.querySelector("#submit").addEventListener("click", function () {
+  // //get the user input
 
-  //get high scores
-  var highScores = 
-  //if (window.localStorage.getItem("highScores")) {
-    //JSON.parse(
-      window.localStorage.getItem("highScores") || []
-     // );
-  //}
+  var newScore;
+  console.log(newScore);
 
-  console.log("highscores", highScores);
+  if (userInput.value.trim() !== "") {
+    newScore = {
+      user: userInput.value,
+      score: score,
+    };
+    console.log(newScore);
+  }
+
+  if (localStorage.getItem("highScores")) {
+    var scoresFromStorage = JSON.parse(localStorage.getItem("highScores"));
+    console.log(scoresFromStorage);
+  } else if (!localStorage.getItem("highScores") && newScore) {
+    //if nothing in local storage, set first score
+    localStorage.setItem('highScores', JSON.stringify([newScore]));
+  }
 
   //build score object
-  var newScore = {
-    user: userInput,
-    score: score
-  };
-  
-  //add new score to high score
-  highScores.push(newScore);
 
-  //set the high scores again
-  window.localStorage.setItem("highScores",JSON.stringify(highScores));
+  // //get high scores
+  // var highScores =
 
+  // console.log("highscores", highScores);
+
+  // //add new score to high score
+  // highScores.push(newScore);
+
+  // //set the high scores again
+  // window.localStorage.setItem("highScores",JSON.stringify(highScores));
+  // // window.localStorage.setItem("highScores",JSON.stringify [0]);
 });
 
 // //do the local storage and show on page

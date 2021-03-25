@@ -17,11 +17,13 @@
 
  h1{
      font-size: 3rem;
-     color:#e63946
+     color:#e63946;
+     margin:0;
  }
 
  h2{
      font-size: 2rem;
+     color:purple;
  }
 
 .text-align-center{
@@ -66,5 +68,87 @@ padding: 1rem;
 
   .question-choices {
       font-size: larger;
-      color:#e63946;
+      color:white;
+      padding: 10px 24px; 
+      cursor: pointer; 
+      width: 50%; 
+      display: block;
+      background-color:purple
   }
+
+
+  #end-screen {
+      color:purple;
+      font-size: larger;
+  }
+
+  #submit {
+      font-size: larger;
+      color:white;
+      padding: 10px 24px; 
+      cursor: pointer; 
+      width: 50%; 
+      background-color:purple;
+  }
+
+  #score {
+      color:purple;
+      font-size:larger;
+  }
+
+  .score-container {
+      color:purple;
+      font-size:larger;
+  }
+
+  #time {
+    color:#e63946;
+    font-size:larger;
+
+  }
+
+  .timer {
+    color:#e63946;
+    font-size:larger;
+  }
+
+  .view-high-scores {
+    color:#e63946;
+    font-size:larger;
+  }
+
+ .wrapper {
+    font-size:larger;
+ }
+
+ #highscores {
+    color:purple;
+    font-size:larger;
+ }
+
+ #clear {
+    font-size: larger;
+    color:white;
+    padding: 10px 24px; 
+    cursor: pointer; 
+    width: 50%; 
+    background-color:purple;
+ }
+
+ #go-back {
+    font-size: larger;
+    color:white;
+    padding: 10px 24px; 
+    cursor: pointer; 
+    width: 50%; 
+    background-color:purple;
+ }
+
+ #high-scores-header {
+    margin:5px;
+ }
+
+ #final-score {
+    color:#e63946;
+    font-size:larger;
+ }
