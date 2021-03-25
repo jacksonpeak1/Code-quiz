@@ -2,7 +2,7 @@
 
 ## Deployed Site Screenshot
 
-![Portfolio Site]()
+![Portfolio Site](https://github.com/jacksonpeak1/Code-quiz/blob/main/screencapture-file-C-Users-Jacks-gt-homework-Code-quiz-index-html-2021-03-24-22_17_24.png)
 
 --
 ## Site Link Below
